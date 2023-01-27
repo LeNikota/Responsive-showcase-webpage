@@ -1,0 +1,376 @@
+@font-face {
+  font-family: "PT-Root-Medium";
+  src: url(fonts/PT-Root-UI_Medium.ttf);
+}
+
+@font-face {
+  font-family: "PT-Root-Bold";
+  src: url(fonts/PT-Root-UI_Bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: PT-Root-Medium;
+}
+
+header,
+main {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 25px;
+}
+
+header,
+main,
+section {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  column-gap: 20px;
+  align-items: start;
+}
+
+section {
+  grid-column: 1/-1;
+  margin-bottom: 60px;
+  row-gap: 50px;
+}
+
+header {
+  min-height: 60px;
+  align-items: center;
+
+  border-bottom: #00000020 1px solid;
+  position: relative;
+}
+
+.header-ad {
+  display: none;
+}
+
+header .logo {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .course-name {
+  grid-column: span 18;
+  font-size: 14px;
+  line-height: 21px;
+  opacity: 0.7;
+}
+
+header .menu {
+  grid-column: span 3;
+  justify-self: end;
+}
+
+header::after {
+  content: "";
+  height: 3px;
+  width: 207px;
+  background-color: #d70e2a;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+main h1,
+main h2 {
+  font-family: PT-Root-Bold;
+  grid-column: 1/-1;
+}
+
+main h1 {
+  margin: 40px 0;
+  font-size: 38px;
+  line-height: 50px;
+}
+
+main h2 {
+  margin: 40px 0 50px 0;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.divider {
+  grid-column: 1/-1;
+  height: 1px;
+  background-color: #00000020;
+}
+
+.phone-card,
+.black-phone-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: span 6;
+}
+
+.black-phone-card {
+  padding: 20px 15px;
+  background: #171717;
+  border-radius: 5px;
+}
+
+.black-phone-card img {
+  border-bottom: #ffffff30 1px solid;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.black-phone-card .description {
+  font-size: 14px;
+  line-height: 21px;
+  color: #fff;
+}
+
+.phone-card .description,
+.black-phone-card .description {
+  margin-top: 20px;
+}
+
+.phone-card .divider {
+  margin-top: 25px;
+  align-self: stretch;
+  position: relative;
+}
+
+.phone-card .divider.left-effect {
+  margin: 0;
+}
+
+.phone-card .divider.left-effect::after {
+  content: "";
+  height: 1px;
+  width: 50px;
+  background-color: #000000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.phone-features-container {
+  grid-column: span 12;
+  display: grid;
+  row-gap: 40px;
+}
+
+.phone-features > img {
+  grid-row: span 3;
+}
+
+.phone-features-banner {
+  grid-column: span 12;
+  width: 100%;
+}
+
+.phone-features-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.phone-features-card > img {
+  grid-column: span 3;
+}
+
+.phone-features-card > p {
+  grid-column: span 9;
+}
+
+.phone-card.accessories img {
+  width: 100%;
+}
+
+.apps {
+  grid-column: span 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 999px) {
+  p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  header,
+  main {
+    max-width: 720px;
+  }
+
+  header .logo {
+    grid-column: span 4;
+  }
+
+  header .course-name {
+    grid-column: span 17;
+  }
+
+  header .menu {
+    grid-column: span 3;
+  }
+
+  .black-phone-card,
+  .phone-card {
+    grid-column: span 12;
+  }
+
+  .phone-showcase {
+    align-items: stretch;
+  }
+
+  .phone-features-card > img {
+    grid-column: span 4;
+  }
+
+  .phone-features-card > p {
+    grid-column: span 8;
+  }
+}
+
+@media (max-width: 719px) {
+  header,
+  main,
+  .header-ad {
+    max-width: 320px;
+    padding: 0 15px;
+  }
+
+  header {
+    min-height: 50px;
+  }
+
+  header,
+  main,
+  section {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 7px;
+  }
+
+  header .logo {
+    grid-column: span 3;
+  }
+
+  header .logo img:nth-child(1) {
+    height: 25px;
+  }
+
+  header .logo img:nth-child(2) {
+    height: 30px;
+  }
+
+  header .course-name {
+    display: none;
+  }
+
+  header .menu {
+    grid-column: span 9;
+  }
+
+  header::after {
+    display: none;
+  }
+
+  .header-ad {
+    margin: 0 auto;
+    padding: 5px 15px;
+    display: block;
+    background-color: #efefef;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  main h1 {
+    margin: 30px 0;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  main h2 {
+    margin: 20px 0 30px 0;
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+	section {
+		margin-bottom: 50px;
+	}
+
+  .phone-showcase {
+    row-gap: 40px;
+  }
+
+  .phone-showcase .phone-card {
+    grid-column: span 6;
+  }
+
+  .phone-showcase .phone-card:nth-child(2) {
+    grid-row: 3;
+    grid-column: span 12;
+  }
+
+  .phone-showcase .phone-card:nth-child(n + 3) .description {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+	.phone-features{
+		row-gap:40px;
+	}
+
+	.phone-features-card > img, .phone-features-card > p {
+    grid-column: 1/-1;
+  }
+
+	.phone-features-container {
+		row-gap: 30px;
+	}
+
+	.phone-card.accessories:nth-child(n + 3)
+	{
+		grid-column: span 6;
+	}
+
+	.phone-card.accessories:nth-child(n + 3) p
+	{
+		grid-column: span 6;
+		font-size: 12px;
+		line-height: 17px;
+	}
+
+	section.app-container{
+		row-gap: unset;
+	}
+
+	.apps{
+		grid-column: 1/-1;
+		flex-direction: row;
+	}
+
+	.apps:nth-child(-n + 4){
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+	}
+}
